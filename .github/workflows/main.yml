@@ -12,7 +12,7 @@ jobs:
       uses: aevea/action-kaniko@master
       with:
         image: jordanyong/express-01
-        tag: ${{ github.sha }}
+        tag: ${{github.ref_name}}-${{ github.sha }}
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         cache: true
